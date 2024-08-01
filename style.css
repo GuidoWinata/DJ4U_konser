@@ -1,0 +1,108 @@
+@font-face {
+  font-family: CircularStd;
+  src: url(assets/font/CircularSpotifyText-Book.otf);
+}
+
+@font-face {
+  font-family: NauSea;
+  src: url(assets/font/NauSea.otf);
+}
+
+:root {
+  --primary: #075FD2;
+  --bg-color: #041631;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  position: fixed;
+  z-index: 10;
+  align-items: center;
+  height: 50px;
+}
+
+.navbar a {
+  font-family: CircularStd, sans-serif;
+  position: relative;
+  color: white;
+  font-size: larger;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.wrappernav {
+  margin-right: 10px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.decor {
+  width: 100%;
+  bottom: 0;
+  translate: 0 10px;
+  position: absolute;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #0C1719;
+  transition: 0.25s;
+}
+
+.wrappernav:hover .decor {
+  background-color: aliceblue;
+  transition: 0.5s;
+}
+
+.home {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  background: url(assets/image/bg.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.filter_bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 70%;
+  background-color: #020f1c;
+}
+
+.dj4u {
+  position: absolute;
+}
+
+.about {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+
+.penjelasan {
+  font-family: NauSea;
+  align-content: center;
+  font-size: x-large;
+  letter-spacing: 4px;
+  color: white;
+  text-align: center;
+}
+
