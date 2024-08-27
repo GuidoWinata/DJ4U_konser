@@ -4,20 +4,61 @@
 }
 
 @font-face {
+  font-family: Russo;
+  src: url(/assets/font/RussoOne-Regular.ttf);
+}
+
+@font-face {
   font-family: NauSea;
   src: url(assets/font/NauSea.otf);
 }
 
+@font-face {
+  font-family: Ubuntu;
+  src: url(/assets/font/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: Sarpanch;
+  src: url(assets/font/Sarpanch-Regular.ttf);
+}
+
+@font-face {
+  font-family: Slope;
+  src: url(assets/font/Slope-Opera.otf);
+}
+
 :root {
-  --primary: #075FD2;
+  --primary: #075fd2;
+  --filter: #020f1cbd;
+  --shadow: #23a0d7;
   --bg-color: #041631;
+  --secondary: #062341;
+  --dark: #020f1c;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
+  font-family: Slope;
   overflow-x: hidden;
   box-sizing: border-box;
+}
+
+.glassmorphism {
+  background: #00000033;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.5s;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 .navbar {
@@ -28,7 +69,7 @@ body {
   position: fixed;
   z-index: 10;
   align-items: center;
-  height: 50px;
+  height: 60px;
 }
 
 .navbar a {
@@ -41,8 +82,8 @@ body {
 }
 
 .wrappernav {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
   position: relative;
 }
 
@@ -53,7 +94,7 @@ body {
   position: absolute;
   height: 5px;
   border-radius: 20px;
-  background-color: #0C1719;
+  background-color: #0c1719;
   transition: 0.25s;
 }
 
@@ -96,13 +137,503 @@ body {
   grid-template-columns: 2fr 3fr;
 }
 
-
 .penjelasan {
-  font-family: NauSea;
-  align-content: center;
-  font-size: x-large;
+  padding-top: 100px;
+  align-content: start;
   letter-spacing: 4px;
   color: white;
+}
+
+.jdul-about {
+  font-family: Slope;
+  padding-left: 40px;
+  text-align: left;
+  font-size: 50px;
+}
+
+.about-text {
+  padding-top: 70px;
+  font-family: Sarpanch;
+  text-align: left;
+  font-size: xx-large;
+  padding-left: 30px;
+}
+
+.gambar_about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.latestCountdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 800px;
+  background: url(/assets/image/latestCountdownBackground.png) no-repeat;
+  background-size: cover;
+}
+
+.blur {
+  position: absolute;
+  width: 100%;
+  top: -50px;
+  height: 100px;
+  z-index: 1;
+  filter: blur(1rem);
+  background-color: #0a0f15e2;
+}
+
+.filter {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  background: #0a0f15ea;
+  z-index: 1;
+}
+
+section.latestCountdown .countdownLatest {
+  z-index: 2;
+  color: #fff;
+  width: 80%;
+  height: 50%;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.countdownLatest .countdownTitle {
+  font-family: Sarpanch;
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 10px;
+}
+
+.countdownTimer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 8rem;
+  max-height: 8rem;
+  width: 100%;
+  gap: 2rem;
+  color: #fff;
+}
+
+.countdownTimer .kotak {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  background: var(--secondary);
+  border-radius: 10px;
+  font-family: CircularStd;
+}
+
+.countdownTimer .kotak div {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.countdownTimer .kotak p {
+  text-align: center;
+  margin: 0;
+}
+
+.garis {
+  display: flex;
+  height: 2px;
+  background-color: #fff;
+  width: 70%;
+  margin: 2rem 0;
+}
+
+.countdownLatest button {
+  font-family: CircularStd;
+  font-weight: bold;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  padding: 0.8rem 3rem;
+}
+
+section.gallery {
+  background-image: url(/assets/image/jorik-kleen-unsplash.jpg);
+  width: 100%;
+  height: 700px;
+  image-resolution: 300dpi;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  padding-top: 70px;
+  z-index: 3;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.slide img {
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-carousel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.button-carousel.left {
+  left: 200px;
+}
+
+.button-carousel.right {
+  right: 200px;
+}
+
+.t-gallery {
+  text-align: center;
+  font-family: Slope;
+  padding-top: 80px;
+  z-index: 2;
+  font-size: xx-large;
+}
+
+.schedule {
+  background: var(--bg-color);
+  height: auto;
+  width: 100%;
+}
+
+.t-schedule {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 80px;
+  /* margin-bottom: 7rem; */
+}
+
+.schbody {
+  height: 110vh;
+  /* background-color: rgba(255, 192, 203, 0.738); */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* justify-content: space-evenly; */
+}
+
+.schbody .gambar-sch {
+  flex: 2;
+  width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: center;
+}
+
+.schbody .gambar-sch img {
+  height: 700px;
+}
+
+.garis-sch {
+  height: 80%;
+  width: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.info-sch {
+  flex: 2;
+  display: flex;
+  /* justify-content: space-evenly; */
+  gap: 60px;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.gris {
+  height: 70%;
+  width: 4px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.wrp {
+  display: flex;
+  align-items: center;
+  width: 66%;
+  justify-content: space-around;
+  background-color: black;
+  height: 14rem;
+  color: white;
+  box-shadow: 5px 5px 5px 5px #23a1d77a;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.ticket {
+  background-image: url(/assets/image/bg-tiket.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  position: relative;
+  height: 200vh;
+}
+
+.t-tkt {
+  z-index: 2;
+  position: relative;
+  padding-top: 8rem;
+  color: white;
+  font-family: NauSea;
+  font-size: 50px;
   text-align: center;
 }
 
+.fltr-tkt {
+  height: inherit;
+  position: absolute;
+  z-index: 0;
+  width: inherit;
+  background-color: var(--filter);
+}
+
+.tkt-cntainer {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  gap: 10rem;
+  width: inherit;
+  z-index: 2;
+  /* background-color: pink; */
+}
+
+.tkt-wrapper {
+  display: grid;
+  padding-left: 4rem;
+  align-items: center;
+  color: white;
+  /* justify-content: center; */
+  z-index: 2;
+  justify-items: center;
+  padding-right: 4rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tkt-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.t-tmpat {
+  background-color: var(--primary);
+  font-family: Ubuntu;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.t-wktu {
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: larger;
+  letter-spacing: 4px;
+}
+
+.tkt-gris {
+  rotate: 180deg;
+  width: 70%;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--primary);
+}
+
+.tkt-wrapper a {
+  text-decoration: none;
+  width: 60%;
+}
+
+.tkt-wrapper a button {
+  height: 70px;
+  border: none;
+  outline: none;
+  font-family: Russo;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 10px;
+  transition: 0.3s;
+  width: inherit;
+}
+
+.tkt-wrapper .btn-solo {
+  background-color: var(--secondary);
+  cursor: not-allowed;
+}
+
+.tkt-wrapper .btn-solo:hover {
+  box-shadow: none;
+}
+
+.solo {
+  background-color: var(--secondary);
+  width: 300px;
+}
+
+.tkt-wrapper a button:hover {
+  box-shadow: 5px 5px 5px var(--shadow);
+  background-color: var(--secondary);
+}
+
+footer.footer {
+  background-image: url(assets/image/footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100vw;
+}
+
+footer.footer .f-ftr {
+  height: inherit;
+  position: absolute;
+  z-index: 0;
+  width: inherit;
+  background-color: rgba(0, 0, 0, 0.834);
+}
+
+.t-footer {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  font-size: 60px;
+  gap: 3rem;
+  align-items: center;
+  color: white;
+}
+
+.t-footer img {
+  height: 120px;
+}
+
+.f-icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.f-icons img {
+  height: 70px;
+}
+
+section.seat {
+  width: 100vw;
+  height: 100vh;
+  background: url(assets/image/dj-angkttngan.png);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seat .filter {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  background: hsla(213, 35%, 6%, 0.8);
+  z-index: 1;
+}
+
+.seat img {
+  position: absolute;
+  height: 80%;
+  z-index: 2;
+  filter: drop-shadow(1px 5px 5px var(--bg-color));
+}
+
+.ticket-info {
+  background-color: var(--dark);
+  position: relative;
+}
+
+.ticket-info .title {
+  text-align: center;
+  margin: 0;
+  padding-top: 80px;
+  color: #fff;
+  font-size: 5rem;
+}
+
+.ticket-info .info {
+  display: flex;
+  color: #fff;
+  font-family: Sarpanch;
+  font-size: 2rem;
+  padding: 100px 100px;
+  display: flex;
+}
+
+.ticket-info .info .tanggal {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.ticket-info .info .lokasi {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.icon {
+  background-color: var(--bg-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
